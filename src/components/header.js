@@ -1,36 +1,61 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import BackgroundImage from 'gatsby-background-image'
+import NavMenu from './navMenu'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+  query {
+    woodBackground: file(relativePath: { eq: "wood_long_bg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    whiteLogo: file(relativePath: { eq: "white-sf-logo.png"}) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`)
+
+  return (
+    <BackgroundImage Tag="section"
+    className="wood-wrapper"
+    fluid={data.woodBackground.childImageSharp.fluid}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+      <div
           style={{
-            color: `white`,
-            textDecoration: `none`,
+            margin: `0 auto`,
+            height: `225px`,
+            boxshadow: `10px 10px 25px black`
           }}
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+        <div 
+          className='header-overlay'
+          style={{
+            margin: `0 auto`,
+            height: `175px`,
+            backgroundColor: `rgba(0, 180, 180, 0.9)`,
+            display: 'flex' 
+          }}
+        > 
+          <NavMenu whiteLogo={data.whiteLogo.childImageSharp.fluid}/>
+        </div>  
 
+      </div>  
+</BackgroundImage>    
+
+
+
+)
+}
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
