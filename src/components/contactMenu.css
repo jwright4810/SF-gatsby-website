@@ -1,0 +1,32 @@
+.contactMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    margin-top: 5px;
+    margin-left: 10%;  
+    height: 100%; 
+    width: 40%; 
+    align-items: center; 
+}
+
+.contactMenu-title {
+    font-family: Archivo Narrow;
+    font-size: 3.4em;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 0.5vw;
+    padding: 20px 0px 20px 0;
+}
+
+.contactMenu-subtitle {
+    padding: 0px 0px 30px 0px;
+    font-size: 1.7em;
+    color: white;
+    font-weight: 600;
+}
+
+.contactMenu-phone-num {
+    text-decoration: none; 
+    font-size: 2.2vw; 
+    margin-left: 35px; 
+}

@@ -4,6 +4,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
 import NavMenu from './navMenu'
+import ContactMenu from './contactMenu'
+import './header.css'; 
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
@@ -17,7 +19,7 @@ const Header = ({ siteTitle }) => {
     }
     whiteLogo: file(relativePath: { eq: "white-sf-logo.png"}) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 300,) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -25,10 +27,12 @@ const Header = ({ siteTitle }) => {
   }
 `)
 
+
+
   return (
     <BackgroundImage Tag="section"
-    className="wood-wrapper"
-    fluid={data.woodBackground.childImageSharp.fluid}
+      className="wood-wrapper"
+      fluid={data.woodBackground.childImageSharp.fluid}
     >
       <div
           style={{
@@ -37,20 +41,13 @@ const Header = ({ siteTitle }) => {
             boxshadow: `10px 10px 25px black`
           }}
         >
-        <div 
-          className='header-overlay'
-          style={{
-            margin: `0 auto`,
-            height: `175px`,
-            backgroundColor: `rgba(0, 180, 180, 0.9)`,
-            display: 'flex' 
-          }}
-        > 
+        <div className='header-overlay' > 
           <NavMenu whiteLogo={data.whiteLogo.childImageSharp.fluid}/>
+          <ContactMenu />
         </div>  
 
       </div>  
-</BackgroundImage>    
+    </BackgroundImage>    
 
 
 

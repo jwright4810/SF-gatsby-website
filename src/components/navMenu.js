@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby' 
+import Img from 'gatsby-image'
+import './navMenu.css'
 
 const navMenu = ({whiteLogo}) => {
 
@@ -11,8 +13,18 @@ const navMenu = ({whiteLogo}) => {
         {title: 'Home', link: '/'},
     ]
 
+    const renderLogo = (title) => {
+      if (title !== 'Home') {
+        return title
+      } else {
+        return <Img className='link-logo' fluid={whiteLogo} />
+      }
+    }
+
     const renderLinks = () => {
-        return links.map((link, idx) => {
+        
+      console.log(whiteLogo)
+      return links.map((link, idx) => {
             return (
                 <Link
                   to={link.link}
@@ -20,13 +32,13 @@ const navMenu = ({whiteLogo}) => {
                   style={{
                       color: 'white',
                       textDecoration: 'none',
-                      padding: '10px 1.8vw', 
+                      padding: '12px 2vw', 
                       textAlign: 'center',
-                      fontSize: '1.4em',
+                      fontSize: '2.2vw',
                       font: 'Archivo Narrow',
                   }}
                 >
-                  {link.title}
+                  {renderLogo(link.title)}
                 </Link>                
             )
         })
