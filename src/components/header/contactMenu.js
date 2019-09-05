@@ -20,7 +20,7 @@ const contactMenu = () => {
                 textDecoration: 'none',
                 padding: '12px 2vw', 
                 textAlign: 'center',
-                fontSize: '1.2em',
+                fontSize: '1.8vw',
                 font: 'Archivo Narrow',
             }}
           >Contact Us</Link>

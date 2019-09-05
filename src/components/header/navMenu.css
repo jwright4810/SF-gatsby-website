@@ -1,0 +1,24 @@
+.link-logo {
+    top: 30px;
+    width: 16vw;
+    height: 13vw;
+    min-width: 187px;
+    min-height: 146px;
+}
+
+.navMenu-links {
+    color:  white; 
+    text-decoration:  none;
+    padding:  12px 1.8vw; 
+    text-align:  center;
+    font-size:  1.4rem;
+    font:  Archivo Narrow;
+    transition: font-size 1s; 
+}
+
+@media screen and (max-width: 1030px) {
+    .navMenu-links {
+        font-size:  1.2rem;
+       
+    }   
+}

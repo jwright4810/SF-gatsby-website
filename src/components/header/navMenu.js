@@ -23,20 +23,13 @@ const navMenu = ({whiteLogo}) => {
 
     const renderLinks = () => {
         
-      console.log(whiteLogo)
+      
       return links.map((link, idx) => {
             return (
                 <Link
                   to={link.link}
                   key={idx}
-                  style={{
-                      color: 'white',
-                      textDecoration: 'none',
-                      padding: '12px 2vw', 
-                      textAlign: 'center',
-                      fontSize: '2.2vw',
-                      font: 'Archivo Narrow',
-                  }}
+                  activeClassName='navMenu-links'
                 >
                   {renderLogo(link.title)}
                 </Link>                

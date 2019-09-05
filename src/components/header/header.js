@@ -37,7 +37,7 @@ const Header = ({ siteTitle }) => {
       <div
           style={{
             margin: `0 auto`,
-            height: `225px`,
+            height: `200px`,
             boxshadow: `10px 10px 25px black`
           }}
         >
