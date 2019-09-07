@@ -1,0 +1,51 @@
+div {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+a {
+    text-decoration: none; 
+    color: white;
+}
+
+.footer-overlay {
+    position: relative; 
+    top: 45px; 
+    margin: 0 auto;
+    height: 155px; 
+    background: rgba(0, 180, 180, 0.9); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.location {
+    text-align: center;
+    margin: 10px;  
+}
+
+.footer-icons {
+    display: flex; 
+    justify-content: center; 
+}
+
+.footer-icon {
+    margin: 0vw 2vw; 
+}
+
+.foot-fb {
+    width: 20px; 
+    height: 15px; 
+}
+
+.mail-icon {
+    width: 25px; 
+    height: 25px; 
+}
+
+.made-by {
+    color: white; 
+    font-size: .75em;
+    text-align: center;  
+    margin: 10px; 
+}
+
