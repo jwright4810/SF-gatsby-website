@@ -18,9 +18,9 @@ const contactMenu = () => {
             style={{
                 color: 'white',
                 textDecoration: 'none',
-                padding: '12px 2vw', 
+                padding: '12px 1.7vw', 
                 textAlign: 'center',
-                fontSize: '1.8vw',
+                fontSize: '1.1rem',
                 font: 'Archivo Narrow',
             }}
           >Contact Us</Link>

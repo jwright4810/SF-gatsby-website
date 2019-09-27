@@ -33,3 +33,17 @@
 
 }
 
+@media screen and (max-width: 1030px) {
+    
+
+    .contactMenu-phone-num {
+        color: white;
+        text-decoration: none;
+        padding: 12px 1.7vw;
+        text-align: center;
+        font-size: 1.7vw;
+    
+    }
+
+}
+

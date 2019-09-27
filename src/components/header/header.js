@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => {
     }
     whiteLogo: file(relativePath: { eq: "white-sf-logo.png"}) {
       childImageSharp {
-        fluid(maxWidth: 300,) {
+        fluid(maxWidth: 215, maxHeight: 150 ) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -42,8 +42,11 @@ const Header = ({ siteTitle }) => {
           }}
         >
         <div className='header-overlay' > 
-          <NavMenu whiteLogo={data.whiteLogo.childImageSharp.fluid}/>
-          <ContactMenu />
+          <div className='header-container' >
+            <NavMenu whiteLogo={data.whiteLogo.childImageSharp.fluid}/>
+            <ContactMenu />          
+          </div>  
+
         </div>  
 
       </div>  
