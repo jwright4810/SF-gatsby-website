@@ -1,6 +1,5 @@
 .about {
     display: flex;
-    justify-content: space-between
 }
 
 .about-summary {
@@ -21,7 +20,7 @@
     color: white;
     margin: 60px 0;
     border-radius: 0px 19px 20px 0px;
-    width: 45vw; 
+    width: 110%; 
 }
 
 .wagon-wheel-break {
@@ -161,11 +160,4 @@ margin-left: 0px;
     max-height: 700px;
     z-index: -5;  
 }
-}
-
-@media (min-width: 1400px) {
-    .about {
-        display: flex; 
-        justify-content: space-between
-    }
 }

@@ -3,7 +3,10 @@ div {
 }
 .wood-wrapper {
     box-shadow: 10px 10px 25px black;
+    margin: 0 auto;
+    height: 200px
 }
+
 
 .header-overlay {
     background: rgba(0, 180, 180, 0.9);
@@ -15,4 +18,22 @@ div {
     height: 155px; 
     display: flex; 
     justify-content: space-between;
+}
+
+@media screen and (max-width: 850px) {
+    .header-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        height: 110px; 
+        display: flex; 
+        justify-content: space-between;
+        transition: all .75s;
+    }
+
+    .wood-wrapper {
+        box-shadow: 10px 10px 25px black;
+        margin: 0 auto;
+        height: 110px
+    }
+
 }

@@ -6,6 +6,7 @@
     height: 100%; 
     width: 40%; 
     align-items: center; 
+    transition: all .75s; 
 }
 
 .contactMenu-title {
@@ -15,6 +16,7 @@
     font-weight: 900;
     letter-spacing: 0.5vw;
     padding: 20px 0px 20px 0;
+    transition: all .75s; 
 }
 
 .contactMenu-subtitle {
@@ -22,15 +24,21 @@
     font-size: 1.6em;
     color: white;
     font-weight: 600;
+    transition: all .75s;
 }
 
 .contactMenu-phone-num {
     color: white;
     text-decoration: none;
-    padding: 12px 1.8vw;
+    padding: 12px 1.7vw;
     text-align: center;
-    font-size: 1.8vw;
+    font-size: 1.2rem;
+    transition: font-size .75s;
 
+}
+
+.contactMenu-data {
+    display: inline-block;
 }
 
 @media screen and (max-width: 1030px) {
@@ -41,9 +49,41 @@
         text-decoration: none;
         padding: 12px 1.7vw;
         text-align: center;
-        font-size: 1.7vw;
+        font-size: 1.1rem;
     
     }
 
 }
 
+@media screen and (max-width: 850px) {
+    .contactMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        margin-left: 0; 
+        margin-right: 10%;  
+        height: 100%; 
+        width: 60%; 
+        align-items: center; 
+    }
+    
+    .contactMenu-title {
+        font-family: Archivo Narrow;
+        font-size: 3em;
+        color: white;
+        font-weight: 900;
+        letter-spacing: 0.5vw;
+        padding: 30px 0px 20px 0;
+    }
+    
+    .contactMenu-subtitle {
+        padding: 0px 0px 25px 0px;
+        font-size: 1.5em;
+        color: white;
+        font-weight: 600;
+    }
+
+    .contactMenu-data {
+        display: none; 
+    }
+}

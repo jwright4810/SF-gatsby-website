@@ -1,6 +1,5 @@
-import { Link } from "gatsby"
+import React from 'react'; 
 import PropTypes from "prop-types"
-import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
 import NavMenu from './navMenu'
@@ -26,21 +25,13 @@ const Header = ({ siteTitle }) => {
     }
   }
 `)
-
-
-
+  
   return (
     <BackgroundImage Tag="section"
       className="wood-wrapper"
       fluid={data.woodBackground.childImageSharp.fluid}
     >
-      <div
-          style={{
-            margin: `0 auto`,
-            height: `200px`,
-            boxshadow: `10px 10px 25px black`
-          }}
-        >
+      <div>
         <div className='header-overlay' > 
           <div className='header-container' >
             <NavMenu whiteLogo={data.whiteLogo.childImageSharp.fluid}/>

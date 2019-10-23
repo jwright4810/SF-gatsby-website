@@ -28,7 +28,7 @@
     font-size:  1.4rem;
     letter-spacing: .06vw; 
     font:  Archivo Narrow;
-    transition: font-size 1s; 
+    transition: font-size .75s; 
 }
 
 .nav-menu a:hover {

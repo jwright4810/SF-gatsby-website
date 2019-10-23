@@ -1,7 +1,9 @@
-import React from 'react'
-import { Link } from 'gatsby' 
-import Img from 'gatsby-image'
-import './navMenu.css'
+import React from 'react';
+import { Link } from 'gatsby'; 
+// import DropDownMenu from './dropDownMenu';
+import Img from 'gatsby-image';
+import './navMenu.css';
+import DropDownMenu from './dropDownMenu';
 
 const links = [
   {title: 'Services', link: '/services/'},
@@ -11,19 +13,55 @@ const links = [
   {title: 'Home', link: '/'},
 ]
 
-class NavMenu extends React.Component {
+class NavMenu extends React.PureComponent {
   
   state = {
-    windowSize: window.innerWidth
+    activeStyle: {
+      color: 'white', 
+      textDecoration: 'none',
+      padding:  '12px 1.8vw', 
+      textAlign:  'center',
+      fontSize:  '1.4rem',
+      letterSpacing: '0px',
+      fontWeight: '800',
+      font:  'Archivo Narrow',
+      transition: 'font-size 1s',
+    }
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.setWindowSizeState)
+    this.handleActiveStyle();
+    window.addEventListener('resize', this.handleActiveStyle)
   }
 
-  setWindowSizeState = () => {
-    this.setState({ windowSize: window.innerWidth })
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleActiveStyle)
   }
+
+  handleActiveStyle = () => {
+    
+    if (window.innerWidth < 1030) {
+      const activeStyleChange = {  
+        ...this.state.activeStyle,
+        fontSize: '1.1rem'      
+      }
+
+      this.setState({
+        activeStyle: activeStyleChange
+      });
+    } else if ( window.innerWidth > 1029 ) {
+      const activeStyleChange = {  
+        ...this.state.activeStyle,
+        color: 'white',
+        fontSize: '1.4rem'      
+      }
+
+      this.setState({
+        activeStyle: activeStyleChange
+      });      
+    }
+
+  } 
   
   renderLogo = (title) => {
     if (title !== 'Home') {
@@ -34,22 +72,13 @@ class NavMenu extends React.Component {
   }
 
   renderLinks = () => {
+     
     return links.map((curr, idx) => {
       return (
         <Link
           to={curr.link}
           key={idx}
-          activeStyle={{
-              color: 'white', 
-              textDecoration: 'none',
-              padding:  '12px 1.8vw', 
-              textAlign:  'center',
-              fontSize:  '1.4rem',
-              letterSpacing: '0px',
-              fontWeight: '800',
-              font:  'Archivo Narrow',
-              transition: 'font-size 1s',
-            }}
+          activeStyle={this.state.activeStyle}
           >
             {this.renderLogo(curr.title)}
           </Link>                
@@ -58,7 +87,7 @@ class NavMenu extends React.Component {
   }  
   
   render() {
-    console.log(this.state.windowSize);
+    
     return (
       <div 
         className='nav-menu'
@@ -70,7 +99,11 @@ class NavMenu extends React.Component {
           alignItems: 'flex-end'
         }}
       >
-        {this.renderLinks()}
+        {
+          window.innerWidth > 850 
+          ? this.renderLinks()
+          : <DropDownMenu list={links} />
+        }
       </div>
     ) 
   }

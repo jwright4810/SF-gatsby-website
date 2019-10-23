@@ -1,0 +1,37 @@
+#dropDownMenu-wrapper {
+  position: absolute;
+  top: 55px;
+  left: 55px; 
+}
+.menu-icon {
+  display: flex; 
+  flex-direction: column; 
+  position: relative;
+  bottom: 28px; 
+}
+
+.menu-icon-component {
+  width: 50px; 
+  height: 5px;
+  background-color: white; 
+  border-radius: 20px; 
+  margin: 6px; 
+}
+
+.dropDownMenu-list {
+  display: flex; 
+  flex-direction: column;
+  background: rgba(0, 180, 180, 0.9);
+  width: 145px; 
+  text-align: center;
+  position: relative;
+  top: 4px;
+  left: -47px; 
+  border-radius:  0 0 5px 5px; 
+  transform: translateY(0%);
+
+}
+
+.dropDownMenu-list-item {
+  padding: 10px 0 5px;
+}

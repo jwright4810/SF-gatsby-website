@@ -3,7 +3,8 @@ import {Link } from 'gatsby';
 import './contactMenu.css'
 
 const contactMenu = () => {
-    return (
+  
+  return (
       <div className='contactMenu'>
         <div className='contactMenu-title'>
           Santa Fe
@@ -12,20 +13,21 @@ const contactMenu = () => {
           Vet Clinic
         </div>
         <div className='contactMenu-data'>
-          <a className='contactMenu-phone-num' href='tel:620-846-2239' >(620) 846-2239</a>
-          <Link 
-            to={'/'}
-            style={{
-                color: 'white',
-                textDecoration: 'none',
-                padding: '12px 1.7vw', 
-                textAlign: 'center',
-                fontSize: '1.1rem',
-                font: 'Archivo Narrow',
-            }}
-          >Contact Us</Link>
-        </div>
+            <a className='contactMenu-phone-num' href='tel:620-846-2239' >(620) 846-2239</a>
+            <Link 
+              to={'/'}
+              style={{
+                  color: 'white',
+                  textDecoration: 'none',
+                  padding: '12px 1.7vw', 
+                  textAlign: 'center',
+                  fontSize: '1.2rem',
+                  font: 'Archivo Narrow',
+              }}
+            >Contact Us</Link>
+          </div>
     </div>
+
     ); 
 }
 
